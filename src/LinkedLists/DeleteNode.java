@@ -12,20 +12,6 @@ public class DeleteNode {
         current.next = current.next.next;
     }
 
-    public static String stringify(MyLinkedListNode head){
-        if(head == null) {
-            return "";
-        } else {
-            StringBuilder sb = new StringBuilder();
-            MyLinkedListNode current = head;
-            while(current!=null){
-                sb.append(current.getData());
-                current = current.getNext();
-            }
-            return sb.toString();
-        }
-    }
-
     public static void main(String[] args){
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.addNode("1");
@@ -42,11 +28,11 @@ public class DeleteNode {
         myLinkedList.addNode("9");
 
 
-        System.out.println(stringify(myLinkedList.getHead()));
+        System.out.println(myLinkedList.stringify());
 
         deleteNode(node);
 
-        System.out.println(stringify(myLinkedList.getHead()));
+        System.out.println(myLinkedList.stringify());
     }
 
 }

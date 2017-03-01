@@ -64,4 +64,19 @@ public class MyLinkedList {
         }
     }
 
+    public String stringify(){
+        if(head == null) {
+            return "";
+        } else {
+            StringBuilder sb = new StringBuilder();
+            MyLinkedListNode current = head;
+            while(current!=null){
+                sb.append(current.getData());
+                current = current.getNext();
+            }
+            return sb.toString();
+        }
+    }
+
+
 }

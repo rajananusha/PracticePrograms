@@ -21,20 +21,6 @@ public class KthToLast {
         return pointer1.getData();
     }
 
-    public static String stringify(MyLinkedListNode head){
-        if(head == null) {
-            return "";
-        } else {
-            StringBuilder sb = new StringBuilder();
-            MyLinkedListNode current = head;
-            while(current!=null){
-                sb.append(current.getData());
-                current = current.getNext();
-            }
-            return sb.toString();
-        }
-    }
-
     public static void main(String[] args){
         MyLinkedList myLinkedList = new MyLinkedList();
         myLinkedList.addNode("1");

@@ -1,9 +1,6 @@
 package LinkedLists;
 
 import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.Scanner;
 
 /**
  * Created by anusha on 2/8/17.
@@ -12,7 +9,7 @@ import java.util.Scanner;
  */
 public class RemoveDupes {
 
-    public static MyLinkedListNode deDupe(MyLinkedListNode head){
+    public static MyLinkedList deDupe(MyLinkedListNode head){
 
         MyLinkedList output = new MyLinkedList();
         HashSet<String> hs = new HashSet<>();
@@ -29,21 +26,7 @@ public class RemoveDupes {
             current = current.getNext();
 
         }
-        return output.getHead();
-    }
-
-    public static String stringify(MyLinkedListNode head){
-        if(head == null) {
-            return "";
-        } else {
-            StringBuilder sb = new StringBuilder();
-            MyLinkedListNode current = head;
-            while(current!=null){
-                sb.append(current.getData());
-                current = current.getNext();
-            }
-            return sb.toString();
-        }
+        return output;
     }
 
     public static void main(String[] args){
@@ -55,9 +38,9 @@ public class RemoveDupes {
         myLinkedList.addNode("O");
         myLinkedList.addNode("W");
 
-        System.out.println(stringify(myLinkedList.getHead()));
-        MyLinkedListNode output = deDupe(myLinkedList.getHead());
-        System.out.println(stringify(output));
+        System.out.println(myLinkedList.stringify());
+        MyLinkedList output = deDupe(myLinkedList.getHead());
+        System.out.println(output.stringify());
     }
 
 }
