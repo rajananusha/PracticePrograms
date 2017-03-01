@@ -51,4 +51,17 @@ public class MyLinkedList {
         }
     }
 
+    public void addNode(MyLinkedListNode node){
+        if(head == null) {
+            head = node;
+        } else {
+            MyLinkedListNode newNode = node;
+            MyLinkedListNode current = head;
+            while(current.getNext()!=null){
+                current = current.getNext();
+            }
+            current.setNext(newNode);
+        }
+    }
+
 }
